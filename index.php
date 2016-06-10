@@ -7,14 +7,42 @@
     <body>
         <?php
             // Variáveis
-            $ola = 'hello ';
-            $mundo = 'world';
-            echo '<p>' . $ola . $mundo . '</p>';
+            $ola = "Hello";
+            $mundo = "world";
+            const nome = "Ingrid";
+            $frase = "<p>$ola, $mundo! My name is " . nome . ".</p>";
 
-            // Constantes
-            define('NOME', 'Ingrid');
-            echo NOME;
+            $comprimento = "<p>" . strlen($frase) . "</p>";
+            $posicao = "<p>" . strpos($frase, "Ingrid") . "</p>";
 
+            echo $frase;
+            echo $comprimento;
+            echo $posicao;
+
+            $cores[0] = "preto";
+            $cores[1] = "branco";
+            $cores[2] = "azul";
+            $cores[3] = "verde";
+            $cores[4] = "vermelho";
+
+            sort($cores);
+
+            foreach($cores as $indice=>$cor) {
+                echo "<p>Cor $indice: $cor</p>";
+            }
+
+            $bebidas["Cerveja"] = 3;
+            $bebidas["vinho"] = 10;
+            $bebidas['refri'] = 2;
+            asort($bebidas);
+
+            foreach($bebidas as $bebida=>$preco) {
+                echo "<p>O valor $preco corresponde a $bebida</p>";
+            }
+
+            $marcas = array("Apple"=>"iphone", "Google"=>"android", "Microsoft"=>"WP");
+            $tamanho = count($marcas);
+            echo $tamanho;
 
         ?>
     </body>
