@@ -36,14 +36,11 @@
             $bebidas['refri'] = 2;
             asort($bebidas);
 
-            foreach($bebidas as $bebida=>$preco) {
-                echo "<p>O valor $preco corresponde a $bebida</p>";
-            }
-
             $marcas = array("Apple"=>"iphone", "Google"=>"android", "Microsoft"=>"WP");
             $tamanho = count($marcas);
-            echo $tamanho;
+            echo "<p>$tamanho</p>";
 
+            print_r($_SERVER);
         ?>
     </body>
 </html>
