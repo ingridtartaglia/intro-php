@@ -2,45 +2,29 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Formulário</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
-        <?php
-            // Variáveis
-            $ola = "Hello";
-            $mundo = "world";
-            const nome = "Ingrid";
-            $frase = "<p>$ola, $mundo! My name is " . nome . ".</p>";
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Formulário com POST</h2>
+                    <?php
+                        echo '<p>Dados capturados na array superglobal $_POST:</p>';
+                        foreach ($_POST as $key => $value){
+                            echo "<p><strong>" . $key . " - </strong> " . htmlspecialchars($value) . "</p>";
+                        }
+                    ?>
+                    <p>
+                        <a href="./index.html">Voltar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-            $comprimento = "<p>" . strlen($frase) . "</p>";
-            $posicao = "<p>" . strpos($frase, "Ingrid") . "</p>";
-
-            echo $frase;
-            echo $comprimento;
-            echo $posicao;
-
-            $cores[0] = "preto";
-            $cores[1] = "branco";
-            $cores[2] = "azul";
-            $cores[3] = "verde";
-            $cores[4] = "vermelho";
-
-            sort($cores);
-
-            foreach($cores as $indice=>$cor) {
-                echo "<p>Cor $indice: $cor</p>";
-            }
-
-            $bebidas["Cerveja"] = 3;
-            $bebidas["vinho"] = 10;
-            $bebidas['refri'] = 2;
-            asort($bebidas);
-
-            $marcas = array("Apple"=>"iphone", "Google"=>"android", "Microsoft"=>"WP");
-            $tamanho = count($marcas);
-            echo "<p>$tamanho</p>";
-
-            print_r($_SERVER);
-        ?>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
     </body>
 </html>
